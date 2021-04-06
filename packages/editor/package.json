@@ -5,7 +5,7 @@
   "license": "GPL",
   "scripts": {
     "start": "chmod +x ./scripts/env.sh && ./scripts/env.sh && node scripts/start.js",
-    "build": "sh -ac 'ORIGIN=127.0.0.1 node scripts/build.js'",
+    "build": "sh -ac 'ORIGIN=localhost node scripts/build.js'",
     "build:clean": "rimraf dist",
     "test": "mocha ./test/*.js",
     "test:watch": "npm test -- --watch",
@@ -157,7 +157,7 @@
     "showdown": "^1.9.0",
     "showdown-highlight": "^2.1.3",
     "solc": "^0.5.10",
-    "web3": "0.20.7"
+    "web3": "^0.20.7"
   },
   "browserslist": [
     ">0.2%",
