@@ -14,7 +14,7 @@ app.use(express.static(path.join(publicDirectory, '.')));   // Static content
 app.use(robotsTxtRouter);                                   // robots.txt
 app.use(catchAllRouter);                                    // Editor
 
-const port = parseInt(process.env.PORT, 10) || 8080;
+const port = parseInt(process.env.PORT, 10) || 4000;
 app.listen(port, () => console.log(`Ethereum Studio is listening on port ${port}\nPublic directory path set to ${publicDirectory}`));
 
 // Enable imports for development and testing

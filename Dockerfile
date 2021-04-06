@@ -1,5 +1,7 @@
-FROM node:10
+FROM node:12-buster
 ARG BUILD
+
+RUN apt update && apt dist-upgrade -y && apt autoremove -y
 
 # Create app directory
 WORKDIR /app
@@ -17,14 +19,27 @@ COPY packages/editor/scripts/generate-templates.js ./packages/editor/scripts/gen
 RUN mkdir -p /app/packages/editor/src/assets/static/json
 RUN mkdir -p /app/packages/editor/src/assets/static/json/templates
 
-# RUN npm i
-# If you are building your code for production
-RUN npx lerna bootstrap --hoist
-
 # Bundle app source
 COPY . .
 
-RUN npm run $BUILD
+RUN npm update --force
+RUN npm -g update
+RUN npm i --force
+
+# If you are building your code for production
+RUN npm audit fix --force
+RUN npx lerna bootstrap --hoist
+
+# Install web3
+RUN npm install @types/web3 --force
+RUN npm install dotenv dotenv-expand fs-extra webpack
+
+# RUN npm install web3 --force
+RUN npm run build
 
 EXPOSE 80
+EXPOSE 8080
+EXPOSE 3000
+EXPOSE 4000
+
 CMD [ "npm", "run", "start:prod" ]
