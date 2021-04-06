@@ -17,7 +17,7 @@ COPY packages/editor/scripts/generate-templates.js ./packages/editor/scripts/gen
 RUN mkdir -p /app/packages/editor/src/assets/static/json
 RUN mkdir -p /app/packages/editor/src/assets/static/json/templates
 
-# RUN npm i
+RUN npm i
 # If you are building your code for production
 RUN npx lerna bootstrap --hoist
 
