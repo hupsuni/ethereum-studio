@@ -274,7 +274,7 @@ export default class SuperProvider {
                 return;
             }
             const web3 = this.getWeb3(endpoint);
-            web3.eth.getTransactionCount(address, undefined, ((err: any, result: any) => {
+            web3.eth.getTransactionCount(address, ((err: any, result: any) => {
                 if (err) {
                     reject(err);
                 }

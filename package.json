@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "gulp": "^4.0.0",
-    "lerna": "^3.13.3"
+    "@octokit/core": "^3.0.0",
+    "lerna": "^3.22.1"
   }
 }
