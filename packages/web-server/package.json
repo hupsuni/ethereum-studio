@@ -32,6 +32,7 @@
     "ts-node": "^8.3.0",
     "ts-sinon": "^1.0.17",
     "tsconfig-paths": "^3.8.0",
-    "typescript": "^3.2.4"
+    "typescript": "^3.2.4",
+    "serve": "^11.3.2"
   }
 }
