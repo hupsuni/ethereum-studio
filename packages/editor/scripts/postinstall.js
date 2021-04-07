@@ -4,10 +4,10 @@ const fs = require('fs');
 // Generate OpenZeppelin file structure
 
 // Directory, where smart contracts are stored
-const contractsDirectory = path.join(__dirname, '../../../', 'node_modules', '@openzeppelin', 'contracts');
+const contractsDirectory = path.join(__dirname, '../', 'node_modules', '@openzeppelin', 'contracts');
 
 // Directory, where json contract files are stored
-const jsonDirectory = path.join(__dirname, '../../../', 'node_modules', '@openzeppelin', 'contracts', 'build', 'contracts');
+const jsonDirectory = path.join(__dirname, '../', 'node_modules', '@openzeppelin', 'contracts', 'build', 'contracts');
 
 // Path of the resulting file
 const jsonFilePath = path.join(__dirname, '../', 'src', 'assets', 'static', 'json', 'openzeppelin.json');
